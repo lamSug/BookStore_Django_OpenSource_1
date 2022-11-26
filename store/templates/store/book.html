@@ -25,7 +25,7 @@
 						<div class="col-sm-6">
 							<div class="product-information">
 								<h4>{{ book.name }}</h4>
-								<p style="margin: 0px">by <a style="font-weight:bold" href="{% url 'store:writer' id=book.writer.id %}">{{ book.writer }}</a></p>
+								<p style="margin: 0px">Tác giả <a style="font-weight:bold" href="{% url 'store:writer' id=book.writer.id %}">{{ book.writer }}</a></p>
 								<div class='rating'>
 									{{ book.totalrating|averagerating:book.totalreview }}
 									<a href='#getreview'><span class='totalrating'>{{ book.totalreview|add:-1 }} Reviews</span></a>
@@ -38,9 +38,9 @@
 						</div>
 						<div class="col-sm-3">
 							<div class="pricebox">
-								<p>Price: ₱<span> {{ book.price }}</span></p>
+								<p>Giá tiền: <span> {{ book.price }} VNĐ</span></p>
 								<button class="btn btn-danger" id="addTocart" data-book-id="{{ book.id }}">
-									<i class="fa fa-shopping-cart""></i>Add to cart
+									<i class="fa fa-shopping-cart""></i>Thêm vào giở hàng
 								</button>
 							</div>
 						</div>
@@ -74,7 +74,7 @@
 							{{ form.review_text|as_crispy_field }}
 						</div>
 						<div class="form-group">
-							<button class="btn btn-danger" type="submit" style="color: #fff">Submit </button>
+							<button class="btn btn-danger" type="submit" style="color: #fff">Xác nhận </button>
 						</div>
 				   </form>	
 					{% for lreview in rreview %}

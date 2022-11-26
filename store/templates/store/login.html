@@ -20,21 +20,21 @@
 				    {% endfor %}
 				</div>
 				{% endif %}
-				<h3> Sign In</h3>	
+				<h3> Đăng nhập</h3>
 				<form action="" method="POST" class="auth-validate-form">
 					{% csrf_token %}
 					<div class="form-group">
-					   <label>Username</label>
+					   <label>Tên người dùng</label>
 					   <input type="text" name="user" class="form-control">
 					</div>
 					<div class="form-group">
-					   <label>Password</label>
+					   <label>Mật khẩu</label>
 					   <input type="password" name="pass" class="form-control">
 					</div>
-					<button type="submit" class="btn btn-danger">Login</button>
+					<button type="submit" class="btn btn-danger">Đăng nhập</button>
 				</form>
-				<a href="#">Forgot your password?</a>
-				<div class="a-divider-break"><h5>New to BookStore?</h5></div>
+				<a href="#">Quên mật khẩu?</a>
+				<div class="a-divider-break"><h5>Khách hàng mới</h5></div>
 				<a class="btn btn-default" href="{% url 'store:registration' %}">Tạo tài khoản mới</a>
 			</div> 
 		</div>

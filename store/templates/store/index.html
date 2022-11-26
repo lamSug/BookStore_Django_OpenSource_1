@@ -18,8 +18,8 @@
 				</div>
 				<div class="col-sm-12">
 					<div class="titleheader">
-						<h3 class="h2header text-center">New Published Book</h3>
-						<a href="#">See All</a>
+						<h3 class="h2header text-center">Sách mới xuất bản</h3>
+						<a href="#"> Xem tất cả</a>
 					</div>
 					<div class="regulara sliderzx">
 						{% for item in newbooks %}
@@ -33,9 +33,9 @@
 								{{ item.totalrating|averagerating:item.totalreview }}
 								<span class="totalrating">{{ item.totalreview|add:-1 }}</span>
 							</div>
-							<p> ₱{{ item.price }}</p>
+							<p> {{ item.price }} VNĐ</p>
 							<button class="btn btn-danger" id="addTocart" data-book-id="{{ item.id }}">
-									<i class="fa fa-shopping-cart""></i>Add to cart
+									<i class="fa fa-shopping-cart""></i>Thêm vào giỏ hàng
 								</button>
 						</div>
 						{% endfor %}
@@ -44,7 +44,7 @@
 
 				<div class="col-sm-12">
 					<div class="titleheader">
-						<h3 class="h2header text-center">Top Selling Book</h3>
+						<h3 class="h2header text-center">Top sách bán chạy</h3>
 					</div>
 					<div class="regulara sliderzx">
 						{% for p in newbooks %}
@@ -58,9 +58,9 @@
 								{{ p.totalrating|averagerating:p.totalreview }}
 								<span class="totalrating">{{ p.totalreview|add:-1 }}</span>
 							</div>
-							<p> ₱{{ p.price }}</p>
+							<p> {{ p.price }} VNĐ</p>
 							<button class="btn btn-danger" id="addTocart" data-book-id="{{ p.id }}">
-									<i class="fa fa-shopping-cart""></i>Add to cart
+									<i class="fa fa-shopping-cart""></i>Thêm vào giỏ hàng
 								</button>
 						</div>
 						{% endfor %}

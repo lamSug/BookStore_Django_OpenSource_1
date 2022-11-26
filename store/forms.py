@@ -28,7 +28,7 @@ class RegistrationForm(UserCreationForm):
 
 class ReviewForm(forms.ModelForm):
     review_star = forms.IntegerField(widget=forms.HiddenInput(), initial=1)
-    review_text = forms.CharField(widget=forms.Textarea(attrs={'rows': 4, 'placeholder': 'Write Your Review'}))
+    review_text = forms.CharField(widget=forms.Textarea(attrs={'rows': 4, 'placeholder': 'Viết nhận xét của bạn'}))
 
     class Meta:
         model = Review
