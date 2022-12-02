@@ -80,10 +80,10 @@ def get_book(request, id):
                 form.save()
                 temp.save()
 
-                messages.success(request, "Review Added Successfully")
+                messages.success(request, "Thêm nhận xét thành công")
                 form = ReviewForm()
         else:
-            messages.error(request, "You need login first.")
+            messages.error(request, "Bạn cần đăng nhập trước.")
     context = {
         "book": book,
         "rbooks": rbooks,

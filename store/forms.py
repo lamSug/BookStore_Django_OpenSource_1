@@ -4,9 +4,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Review
 
+
 class RegistrationForm(UserCreationForm):
     name = forms.CharField(required=True)
     email = forms.EmailField(required=True)
+
     class Meta:
         model = User
         fields = [
@@ -16,6 +18,7 @@ class RegistrationForm(UserCreationForm):
             'password1',
             'password2'
         ]
+
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
         user.first_name = self.cleaned_data['name']
@@ -25,6 +28,7 @@ class RegistrationForm(UserCreationForm):
             user.save()
 
         return user
+
 
 class ReviewForm(forms.ModelForm):
     review_star = forms.IntegerField(widget=forms.HiddenInput(), initial=1)
@@ -36,9 +40,8 @@ class ReviewForm(forms.ModelForm):
             'review_star',
             'review_text'
         ]
+
     def __init__(self, *args, **kwargs):
         super(ReviewForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_show_labels = False
-
-    
