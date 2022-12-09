@@ -3,24 +3,20 @@ from .models import Order
 
 class OrderCreateForm(forms.ModelForm):
 	DIVISION_CHOICES = (
-		('Kabankalan City', 'Kabankalan City'),
-		('Bacolod City', 'Bacolod City'),
-		('Himamaylan City', 'Himamaylan City'),
-		('Binalbagan', 'Binalbagan'),
-		('Hinigaran', 'Hinigaran'),
+		('Hà Nội', 'Hà Nội'),
+		('Hải Phòng', 'Hải Phòng'),
+
 	)
 
 	DISCRICT_CHOICES = (
-		('Brgy.1', 'Brgy.1'), 
-		('Brgy.2', 'Brgy.2'),
-		('Brgy.3', 'Brgy.3'),
-		('Brgy.4', 'Brgy.4'),
-		('Brgy.5', 'Brgy.5'),
+		('Đan Phượng', 'Đan Phượng'),
+		('Hoài Đức', 'Hoài Đức'),
 	)
 
 	PAYMENT_METHOD_CHOICES = (
+		('VNPay', 'VNPay'),
 		('Paypal', 'Paypal'),
-		('Credit Card','Credit Card')
+		('Thẻ ghi nợ','Thẻ ghi nợ')
 	)
 
 	division = forms.ChoiceField(choices=DIVISION_CHOICES)
