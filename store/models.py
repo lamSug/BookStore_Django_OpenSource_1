@@ -40,6 +40,7 @@ class Book(models.Model):
 
 	def __str__(self):
 	    return self.name
+	
 
 class Review(models.Model):
 	customer = models.ForeignKey(User, on_delete = models.CASCADE)

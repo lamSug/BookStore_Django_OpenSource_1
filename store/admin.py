@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Category, Writer, Book, Slider
+from django.contrib.auth.models import User
 
 
 class AddCategory(admin.ModelAdmin):
@@ -30,6 +31,8 @@ admin.site.register(Book, AddBook)
 
 class AddSlider(admin.ModelAdmin):
     list_display = ['title', 'created', 'updated']
+
+
 # list_editable = ['title',]
 
 

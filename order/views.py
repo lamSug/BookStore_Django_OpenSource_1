@@ -5,6 +5,7 @@ from django.views import View
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from cart.cart import Cart
 from .models import Order, OrderItem
+from store.models import Book
 from .forms import OrderCreateForm
 from .pdfcreator import renderPdf
 
@@ -27,7 +28,15 @@ def order_create(request):
 						book=item['book'], 
 						price=item['price'], 
 						quantity=item['quantity']
+
 						)
+					book = Book.objects.get(id = item['book'].id)
+					book.stock -= item['quantity']
+					book.status -= item['quantity']
+					book.save()
+					print('a')
+					# book.stock -=
+
 				cart.clear()
 				return render(request, 'order/successfull.html', {'order': order})
 
